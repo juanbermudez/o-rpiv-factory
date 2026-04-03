@@ -1,10 +1,10 @@
-# RPI Factory
+# O-RPIV Factory
 
-A compound product development workflow plugin for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+**O**rchestrate, **R**esearch, **P**lan, **I**mplement, **V**erify — a compound product development workflow plugin for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-## What is RPI Factory?
+## What is O-RPIV Factory?
 
-RPI Factory transforms how you build software with AI. It provides a structured, methodology-driven workflow for planning, implementing, and verifying features — turning Claude Code into a full product development partner.
+O-RPIV Factory transforms how you build software with AI. It provides a structured, methodology-driven workflow that follows the O-RPIV cycle — orchestrating work, researching context, planning features, implementing in waves, and verifying results — turning Claude Code into a full product development partner.
 
 The core loop is:
 
@@ -29,14 +29,14 @@ Each cycle grows `docs/solutions/`. Future cycles are faster because past soluti
 
 ## Installation
 
-RPI Factory is installed as a Claude Code plugin. Add it to your project or global Claude Code configuration:
+O-RPIV Factory is installed as a Claude Code plugin. Add it to your project or global Claude Code configuration:
 
 ```json
 {
   "plugins": [
     {
       "name": "f",
-      "path": "/path/to/rpi-factory/plugins/f"
+      "path": "/path/to/o-rpiv-factory/plugins/f"
     }
   ]
 }
@@ -127,7 +127,7 @@ After work completes, `/f:compound` extracts structured learnings:
 
 ## Configuration
 
-RPI Factory uses environment variables for runtime configuration and project-level files for methodology customization.
+O-RPIV Factory uses environment variables for runtime configuration and project-level files for methodology customization.
 
 ### Environment Variables
 
@@ -152,7 +152,7 @@ Configure the following in your project's `CLAUDE.md` or agent prompts:
 
 ### Customizing for Your Project
 
-RPI Factory is designed to be adapted:
+O-RPIV Factory is designed to be adapted:
 
 1. **Task ID Pattern** — Set `TASK_ID_PATTERN` to match your issue tracker format
 2. **Initiatives** — Define your team's initiative structure in Linear; the planner will assign projects to initiatives

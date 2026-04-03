@@ -1,7 +1,7 @@
 {
-  "name": "rpi-factory",
+  "name": "o-rpiv-factory",
   "owner": {
-    "name": "RPI Factory Contributors",
+    "name": "O-RPIV Factory Contributors",
     "email": "juan@lot-iq.com"
   },
   "plugins": [

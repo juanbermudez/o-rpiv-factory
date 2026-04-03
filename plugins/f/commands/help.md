@@ -5,7 +5,7 @@ description: "Show all f commands, agents, and workflow stages"
 
 # /f:help — Product Development Workflow
 
-Display the full reference for the RPI Factory compound engineering workflow.
+Display the full reference for the O-RPIV Factory compound engineering workflow.
 
 ## Instructions
 
@@ -13,7 +13,7 @@ When the user runs `/f:help`, display the following reference:
 
 ---
 
-## RPI Factory — Command Reference
+## O-RPIV Factory — Command Reference
 
 ### Core Commands
 
