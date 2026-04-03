@@ -1,0 +1,11 @@
+{
+  "name": "f",
+  "version": "1.4.0",
+  "description": "Compound product development workflow. Plan features with research + alignment gates, implement in dependency-aware waves with parallel agents, extract learnings into a growing knowledge base.",
+  "author": {
+    "name": "RPI Factory Contributors",
+    "email": "juan@lot-iq.com"
+  },
+  "repository": "https://github.com/juanbermudez/rpi-factory",
+  "keywords": ["workflow", "planning", "implementation", "linear", "compound-engineering"]
+}

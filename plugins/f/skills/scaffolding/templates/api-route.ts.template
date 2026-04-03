@@ -1,0 +1,23 @@
+import { withPermission } from '@/lib/permissions/middleware'
+import { ok, badRequest, serverError } from '@/lib/api/responses'
+import { z } from 'zod'
+
+const {{schemaName}} = z.object({
+  // TODO: Define schema fields
+})
+
+export const {{method}} = withPermission('{{permission}}', async (req, ctx) => {
+  try {
+    const body = {{schemaName}}.parse(await req.json())
+    const { data, error } = await ctx.supabase
+      .from('{{table}}')
+      .{{operation}}({ ...body, organization_id: ctx.organizationId })
+      .select()
+      .single()
+    if (error) throw error
+    return ok({ data })
+  } catch (error) {
+    if (error instanceof z.ZodError) return badRequest({ error: error.message })
+    return serverError({ error: 'Failed to {{operationDescription}}' })
+  }
+})

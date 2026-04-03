@@ -1,0 +1,22 @@
+'use client'
+
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+
+interface {{ComponentName}}Props {
+  // TODO: Define props
+}
+
+export function {{ComponentName}}({ }: {{ComponentName}}Props) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{{title}}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {/* TODO: Component content */}
+      </CardContent>
+    </Card>
+  )
+}

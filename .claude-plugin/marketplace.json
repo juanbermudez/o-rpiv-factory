@@ -1,0 +1,15 @@
+{
+  "name": "rpi-factory",
+  "owner": {
+    "name": "RPI Factory Contributors",
+    "email": "juan@lot-iq.com"
+  },
+  "plugins": [
+    {
+      "name": "f",
+      "source": "./plugins/f",
+      "description": "Compound product development workflow: plan features with research + alignment gates, implement in dependency-aware waves with parallel agents, extract learnings into a growing knowledge base.",
+      "version": "1.5.0"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+-- supabase/migrations/{{timestamp}}_{{description}}.sql
+CREATE TABLE {{table_name}} (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  organization_id UUID NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+  -- TODO: Add columns
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_{{table_name}}_org ON {{table_name}}(organization_id);
+ALTER TABLE {{table_name}} ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "org_isolation" ON {{table_name}} FOR ALL
+  USING (organization_id = (auth.jwt() -> 'user_metadata' ->> 'organization_id')::uuid);
+
+GRANT ALL ON {{table_name}} TO authenticated;

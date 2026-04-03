@@ -1,0 +1,61 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/git-workflow.sh",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/status-transition.sh",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/careful-guard.sh",
+            "timeout": 2000
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/dependency-gate.sh",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/freeze-guard.sh",
+            "timeout": 2000
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__linear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/status-transition.sh",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/skills/product-dev-workflow/hooks/skill-usage-logger.sh",
+            "timeout": 1000
+          }
+        ]
+      }
+    ]
+  }
+}

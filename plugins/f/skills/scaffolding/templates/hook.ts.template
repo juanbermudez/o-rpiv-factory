@@ -1,0 +1,17 @@
+import { useQuery } from '@tanstack/react-query'
+import { createClient } from '@/lib/supabase/client'
+
+export function use{{ResourceName}}(organizationId: string) {
+  return useQuery({
+    queryKey: ['{{resourceKey}}', organizationId],
+    queryFn: async () => {
+      const supabase = createClient()
+      const { data, error } = await supabase
+        .from('{{table}}')
+        .select('*')
+        .eq('organization_id', organizationId)
+      if (error) throw error
+      return data
+    },
+  })
+}
